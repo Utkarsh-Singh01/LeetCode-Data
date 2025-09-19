@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background: linear-gradient(45deg, #ff5f6d 0%, #ffc371 100%);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: linear-gradient(100deg, #2e3192 0%, #1bffff 100%);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: rgb(9, 241, 32);
+  text-align: center;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.input-user-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#user-input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+#search-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+#search-btn:hover {
+  background: #00ccaa;
+}
+
+/* ==== Progress Circles ==== */
+.progress {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 900;
+  position: relative;
+  background: conic-gradient(#299f5d 0%, #283a2e 0%);
+  transition: background 1s linear;
+}
+
+.circle span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.circle.easy { border: 4px solid #00ff88; }
+.circle.medium { border: 4px solid #ffcc00; }
+.circle.hard { border: 4px solid #ff4444; }
+
+/* ==== Stats Card ==== */
+.stats-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.stats-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stats-card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #00ffcc;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(0,0,0,0.15));
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.stat-row:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(0,255,204,0.3), rgba(0,0,0,0.25));
+}
+
+/* ===== Responsive Styling ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .circle {
+    width: 110px;
+    height: 110px;
+    font-size: 14px;
+  }
+
+  .circle span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-user-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #user-input, #search-btn {
+    width: 100%;
+  }
+
+  .progress {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circle {
+    width: 95px;
+    height: 95px;
+    font-size: 12px;
+  }
+
+  .circle span {
+    font-size: 16px;
+  }
+
+  .stat-row {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
